@@ -1,0 +1,40 @@
+---
+title: "About This Website"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    theme: flatly
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+---
+
+Perkenalkan, saya Willia Dwi Puspitasari (200605110004) salah satu mahasiswi Teknik Informatika UIN Maulana Malik Ibrahim Malang.
+Terimakasih kepada Prof. Dr. Suhartono, M.Kom atas bimbingannya dalam pembelajaran dan pembuatan website pada kelas Linear Algebra - A. Dengan adanya website yang saya buat ini, semoga menjadi manfaat untuk pembaca.
+
+# Pemilik Website
+
+<img src="WilliaDwiP.jpg"
+    alt=""
+    height="310"
+    width="180"
+    style="float: center; margin: 10px;"
+    />
+    
+Willia Dwi Puspitasari
+
+# Dosen Pengampu
+
+<img src="ProfSuhartono1.jpg"
+    alt=""
+    height="230"
+    width="190"
+    style="float: center; margin: 10px;"
+    />
+
+
+Prof. Dr. Suhartono, M.Kom
+
+
+

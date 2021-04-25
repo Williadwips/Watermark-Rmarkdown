@@ -1,0 +1,107 @@
+---
+title: "**Menambahkan Watermark Tulisan & Gambar Pada Rmarkdown**"
+author: "**Willia Dwi Puspitasari // Teknik Informatika // UIN Maulana Malik Ibrahim Malang // Dosen Pengampu: Prof. Dr. Suhartono, M.Kom**"
+date: "19 April 2021"
+output: 
+  html_document:
+    css: watermark.css
+    toc: true
+    toc_depth: 2
+    self_contained: yes
+    highlight: pygments
+    theme: flatly
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+---
+
+# 1. *Apa yang dimaksud dengan watermark?*
+
+Arti watermark dalam bahasa Indonesia sangat simpel, yakni Tanda Air. Namun, definisi yang sebenarnya dari istilah ini menurut wikipedia adalah gambar atau pola yang muncul dikertas dengan bentuk seperti bayangan dan bisa dilihat pada pencahayaan tertentu karena kelihatannya samar. 
+
+Watermark juga memiliki fungsi sebagai perlindungan hak cipta, menunjukkan originalitas, branding, dan lainnya. Jadi, jika sebuah gambar memiliki watermark, artinya karya tersebut tidak bisa asal di klaim oleh orang lain yang mengaku-ngaku bahwa karya tersebut miliknya. 
+
+# 2. *Bentuk Watermark*
+
+Ada banyak sekali bentuk watermark yang bisa digunakan, diantaranya adalah:
+
+- Berupa logo khusus yang unik
+
+- Berupa teks seperti nama akun media sosial, nama toko atau lainnya.
+
+- Teks copyright
+
+# 3. *Menambahkan Watermark di Rmarkdown*
+## 3.1 Membuat CSS file pada Rstudio
+
+Selain menggunakan code di `.rmd`, Cara menambahkan watermark pada halaman web juga menggunakan file `.css` di rstudio. Dimana `.css` ini berfungsi untuk mengatur letak dan transparasi watermark. Adapun code yang terletak pada `.css` adalah sebagai berikut:
+
+```
+.watermark {
+  opacity: 0.2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 500%;
+  color: #00407d;
+```
+## 3.2 Menghubungkan .rmd dengan .css
+Setelah membuat file `.css`, selanjutnya yaitu menghubungkan antara `.rmd` dengan `.css`. Adapun caranya sebagai berikut:
+
+```
+#disesuaikan 
+title: "..." 
+author: "..."
+date: "..."
+output: 
+ html_document:
+    css: watermark.css
+```
+## 3.3 Watermark Latar/Halaman
+Pembahasan kali ini mengenai watermark yang bisa menampilkan berupa gambar maupun tulisan.
+Adapun code untuk membuat watermark tulisan pada `.rmd` adalah sebagai berikut:
+
+```
+<div class="watermark">...</div>
+```
+Sedangkan code untuk membuat watermark gambar pada `.rmd` adalah sebagai berikut:
+
+```
+<div class="watermark"><img src ="..."></div>
+```
+# 4. *Memberikan Watermark pada Gambar*
+
+Sebelumnya kita harus menginstall package EBImage terlebih dahulu. Code nya adalah seperti dibawah ini. 
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("EBImage")
+```
+Kemudian jika sudah terinstall, mengimport/panggil dengan code library seperti dibawah. 
+```{r}
+library(EBImage)
+```
+
+Lalu, pada code dibawah ini adalah pemanggilan gambar yang ingin ditampilkan dengan watermark sesuai label yang dituliskan. 
+```{r}
+img = readImage("C:/Users/asus/Documents/KULIAH/SEMESTER 2/LINEAR ALGEBRA/Watermark/UIN-Malang.jpg")
+
+display(img, method="raster")
+text(x = 20, y = 20, label="UIN Maliki Malang", adj = c(0,1), col = "White", cex = 2)
+```
+
+Sekian penjelasan mengenai watermark dari saya. Mohon maaf atas ketidaksempurnaan penjelasan dalam web ini, karena kesempurnaan itu hanya milik Allah swt. 
+
+# DAFTAR PUSTAKA 
+
+http://freerangestats.info/blog/2017/09/09/rmarkdown
+
+<div class="watermark"><img src ="http://1.bp.blogspot.com/-t47w2Xvb5hU/VmIejExYyUI/AAAAAAAACVo/4HHVbWEnM-M/s1600/uin%2Bmalang.jpg"></div>
+
+
+
+
+
+
+
